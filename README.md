@@ -12,8 +12,8 @@ java -version y javac -version para el compilador
 
 4. Probar la conexión desde SQL DEVELOPER o VSC con la siguiente configuración.
 >Connection Name: PRUEBA
-Username: prueba
-Password: Prueba123
+Username: system
+Password: Oracle192026$
 Hostname: localhost
 Port: 1521
 Service name: XEPDB1
@@ -27,54 +27,50 @@ Acá lo que hacemos es poner la dependencia en el POM
 
 ```
 <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
+
+        
+<dependency>
  <groupId>com.oracle.database.jdbc</groupId>
  <artifactId>ojdbc11</artifactId>
  <version>23.3.0.23.09</version>
 </dependency>
+              
 ```
 
 6. Configurar el properties con el link de JDBC
 ```
+spring.application.name=Pasteleria
+
+server.port=8080
+
 spring.datasource.url=jdbc:oracle:thin:@localhost:1521/XEPDB1
-spring.datasource.username=HR
-spring.datasource.password=hr
+spring.datasource.username=system
+spring.datasource.password=Oracle192026$
 spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
 
-spring.jpa.database-platform=org.hibernate.dialect.OracleDialect
-spring.jpa.hibernate.ddl-auto=none
-spring.jpa.show-sql=true
 ```
 
 7. Codigo de prueba 
 ```
+package com.pasteleria.conect;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class ConexionOracleTest {
 
     public static void main(String[] args) {
 
         String url = "jdbc:oracle:thin:@localhost:1521/XEPDB1";
-        String usuario = "prueba";
-        String password = "Prueba123";
+        String usuario = "system";
+        String password = "Oracle192026$";
 
         try {
-
             Connection conexion = DriverManager.getConnection(url, usuario, password);
             System.out.println("Conexion exitosa");
-
-            Statement stmt = conexion.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM CUSTOMERS");
-
-            while (rs.next()) {
-                System.out.println(rs.getString("CUST_FIRST_NAME") + " " +
-                                   rs.getString("CUST_LAST_NAME"));
-            }
-
-            rs.close();
-            stmt.close();
             conexion.close();
 
         } catch (Exception e) {
