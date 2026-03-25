@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{general/fragmentos :: head}">
+        <style>
+            .product-hero {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 40px 0;
+                border-radius: 15px 15px 0 0;
+            }
+            .price-section {
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                border-radius: 12px;
+                padding: 25px;
+                text-align: center;
+                margin: 25px 0;
+                border: 2px solid #e9ecef;
+            }
+            .price-label {
+                font-size: 1.1rem;
+                color: #6c757d;
+                font-weight: 600;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+            .product-price {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: #28a745;
+                margin: 0;
+            }
+            .btn-add-cart {
+                background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+                border: none;
+                color: white;
+                padding: 15px 40px;
+                border-radius: 30px;
+                font-weight: bold;
+                font-size: 1.2rem;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            }
+            .btn-add-cart:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+            }
+            
+            .btn-add-cart:disabled {
+                background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+                cursor: not-allowed;
+                opacity: 0.7;
+                transform: none;
+                box-shadow: none;
+            }
+            .btn-add-cart:disabled:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .info-card {
+                border: none;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                margin-bottom: 25px;
+                transition: transform 0.3s ease;
+            }
+            .info-card:hover {
+                transform: translateY(-5px);
+            }
+            .info-card .card-header {
+                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                color: white;
+                border-radius: 12px 12px 0 0;
+                font-weight: bold;
+                font-size: 1.1rem;
+            }
+            .feature-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .feature-list li {
+                padding: 12px 15px;
+                border-bottom: 1px solid #eee;
+                display: flex;
+                align-items: center;
+            }
+            .feature-list li:before {
+                content: "•";
+                color: #667eea;
+                font-weight: bold;
+                font-size: 1.5rem;
+                margin-right: 12px;
+            }
+            .feature-list li:last-child {
+                border-bottom: none;
+            }
+            .availability-badge {
+                font-size: 1.1rem;
+                padding: 10px 20px;
+                border-radius: 20px;
+            }
+            .section-divider {
+                border-top: 2px solid #e9ecef;
+                margin: 30px 0;
+            }
+            .toast-notification {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1050;
+                min-width: 300px;
+            }
+            
+            .stock-info {
+                text-align: center;
+                margin-bottom: 15px;
+                font-size: 1rem;
+            }
+            .stock-disponible {
+                color: #28a745;
+                font-weight: 600;
+            }
+            .stock-agotado {
+                color: #dc3545;
+                font-weight: 600;
+            }
+            
+            .selector-tamano, .selector-sabor {
+                width: 100%;
+                padding: 8px 12px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            .selector-label {
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #333;
+            }
+        </style>
+    </head>
+    <body>
+        <header th:replace="~{general/fragmentos :: header}"></header>
+
+        <main class="container py-4">
+            
+            <div class="mb-4">
+                <a class="btn btn-outline-primary" th:href="@{/catalogo}">
+                    <i class="fa-solid fa-arrow-left me-2"></i>Volver al catálogo
+                </a>
+            </div>
+
+            
+            <div class="card shadow-lg border-0">
+                
+                <div class="product-hero text-center">
+                    <h1 class="display-6 fw-bold mb-0" th:text="${producto.nombre}">Nombre del producto</h1>
+                </div>
+
+                <div class="card-body p-4">
+                    
+                    <div class="price-section">
+                        <div class="price-label">
+                            <i class="fas fa-tag me-2"></i>Precio
+                        </div>
+                        <div class="product-price">
+                            ₡<span th:text="${#numbers.formatDecimal(producto.precio, 0, 'COMMA', 2, 'POINT')}">0.00</span>
+                        </div>
+                    </div>
+
+                   
+                    <div class="stock-info">
+                        <span th:if="${producto.stock > 0}">
+                            <i class="fas fa-check-circle me-2 stock-disponible"></i>
+                            <span class="stock-disponible" th:text="'Stock disponible: ' + ${producto.stock} + ' unidades'"></span>
+                        </span>
+                        <span th:if="${producto.stock == 0}">
+                            <i class="fas fa-times-circle me-2 stock-agotado"></i>
+                            <span class="stock-agotado">Producto agotado</span>
+                        </span>
+                    </div>
+
+                   
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-info-circle me-2"></i>Descripción
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text mb-0 lead" th:text="${producto.descripcion}">Descripción del producto</p>
+                        </div>
+                    </div>
+
+                    
+                    <div class="info-card" th:if="${producto.conservacion}">
+                        <div class="card-header">
+                            <i class="fas fa-snowflake me-2"></i>Instrucciones de Conservación
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text mb-0" th:text="${producto.conservacion}">Instrucciones de conservación</p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        
+                        <div class="col-lg-4 mb-3">
+                            <div class="info-card h-100">
+                                <div class="card-header">
+                                    <i class="fas fa-ruler-combined me-2"></i>Tamaños Disponibles
+                                </div>
+                                <div class="card-body">
+                                    <div th:if="${#lists.isEmpty(tamanos)}" class="text-muted text-center">Sin tamaños</div>
+                                    <div th:if="${!#lists.isEmpty(tamanos)}">
+                                        
+                                        <div class="selector-label">Selecciona un tamaño:</div>
+                                        <select class="selector-tamano" id="selectorTamano">
+                                            <option value="">-- Elegir tamaño --</option>
+                                            <option th:each="t : ${tamanos}" 
+                                                    th:value="${t.etiqueta}"
+                                                    th:text="${t.etiqueta}">
+                                                Tamaño
+                                            </option>
+                                        </select>
+                                        
+                                        
+                                        <ul class="feature-list mt-3">
+                                            <li th:each="t : ${tamanos}" th:text="${t.etiqueta}">Tamaño</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-lg-4 mb-3">
+                            <div class="info-card h-100">
+                                <div class="card-header">
+                                    <i class="fas fa-palette me-2"></i>Sabores
+                                </div>
+                                <div class="card-body">
+                                    <div th:if="${#lists.isEmpty(sabores)}" class="text-muted text-center">Sin sabores</div>
+                                    <div th:if="${!#lists.isEmpty(sabores)}">
+                                        
+                                        <div class="selector-label">Selecciona un sabor:</div>
+                                        <select class="selector-sabor" id="selectorSabor">
+                                            <option value="">-- Elegir sabor --</option>
+                                            <option th:each="s : ${sabores}" 
+                                                    th:value="${s.etiqueta}"
+                                                    th:text="${s.etiqueta}">
+                                                Sabor
+                                            </option>
+                                        </select>
+                                        
+                                        
+                                        <ul class="feature-list mt-3">
+                                            <li th:each="s : ${sabores}" th:text="${s.etiqueta}">Sabor</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-lg-4 mb-3">
+                            <div class="info-card h-100">
+                                <div class="card-header">
+                                    <i class="fas fa-list-alt me-2"></i>Ingredientes
+                                </div>
+                                <div class="card-body">
+                                    <div th:if="${#lists.isEmpty(ingredientes)}" class="text-muted text-center">Sin ingredientes</div>
+                                    <ul class="feature-list" th:if="${!#lists.isEmpty(ingredientes)}">
+                                        <li th:each="i : ${ingredientes}" th:text="${i.nombre}">Ingrediente</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    
+                    <div class="text-center">
+                        
+                        <button class="btn btn-add-cart mb-3" 
+                                th:disabled="${producto.stock == 0}"
+                                onclick="agregarAlCarritoDesdeDetalle()"
+                                th:text="${producto.stock > 0} ? 'Agregar al Carrito' : 'Producto Agotado'">
+                            <i class="fas fa-shopping-cart me-2"></i>Agregar al Carrito
+                        </button>
+                        <div>
+                            <span class="badge availability-badge" 
+                                  th:class="${producto.stock > 0} ? 'bg-success' : 'bg-danger'"
+                                  th:text="${producto.stock > 0} ? 'Disponible' : 'No disponible'">
+                                Disponible
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer th:replace="~{general/fragmentos :: footer}"></footer>
+
+        <script>
+            
+            let tamanoSeleccionado = '';
+            let saborSeleccionado = '';
+
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log("Página cargada, inicializando carrito...");
+                actualizarContadorCarrito();
+                
+                
+                document.getElementById('selectorTamano').addEventListener('change', function() {
+                    tamanoSeleccionado = this.value;
+                    console.log("Tamaño seleccionado:", tamanoSeleccionado);
+                });
+                
+                document.getElementById('selectorSabor').addEventListener('change', function() {
+                    saborSeleccionado = this.value;
+                    console.log("Sabor seleccionado:", saborSeleccionado);
+                });
+            });
+
+            
+            function agregarAlCarritoDesdeDetalle() {
+                
+                const id = [[${producto.idProducto}]];
+                const nombreBase = "[[${producto.nombre}]]";
+                const precio = [[${producto.precio}]];
+                const descripcion = "[[${producto.descripcion}]]";
+                const stock = [[${producto.stock}]];
+                
+                
+                const tamanoSelect = document.getElementById('selectorTamano');
+                const saborSelect = document.getElementById('selectorSabor');
+                
+                tamanoSeleccionado = tamanoSelect.value;
+                saborSeleccionado = saborSelect.value;
+                
+                console.log("Agregando producto:", {
+                    id, 
+                    nombre: nombreBase, 
+                    precio, 
+                    stock,
+                    tamano: tamanoSeleccionado,
+                    sabor: saborSeleccionado
+                });
+                
+                
+                if (stock <= 0) {
+                    mostrarMensaje('❌ ' + nombreBase + ' está agotado', 'error');
+                    return;
+                }
+                
+                
+                const tieneTamanos = [[${!#lists.isEmpty(tamanos)}]];
+                const tieneSabores = [[${!#lists.isEmpty(sabores)}]];
+                
+                if (tieneTamanos && !tamanoSeleccionado) {
+                    mostrarMensaje('❌ Por favor selecciona un tamaño', 'error');
+                    return;
+                }
+                
+                if (tieneSabores && !saborSeleccionado) {
+                    mostrarMensaje('❌ Por favor selecciona un sabor', 'error');
+                    return;
+                }
+                
+                
+                let nombreFinal = nombreBase;
+                if (tamanoSeleccionado) {
+                    nombreFinal += ` - ${tamanoSeleccionado}`;
+                }
+                if (saborSeleccionado) {
+                    nombreFinal += `, ${saborSeleccionado}`;
+                }
+                
+                agregarAlCarrito(id, nombreFinal, precio, descripcion, stock);
+            }
+
+            
+            function agregarAlCarrito(id, nombre, precio, descripcion, stock) {
+                console.log("Ejecutando agregarAlCarrito con:", {id, nombre, precio, stock});
+                
+                let carrito = JSON.parse(localStorage.getItem('carritoPasteleria') || '[]');
+                const productoExistente = carrito.find(item => item.id === id && item.nombre === nombre);
+                
+                if (productoExistente) {
+                    
+                    if (productoExistente.cantidad >= stock) {
+                        mostrarMensaje('❌ Cantidad mayor al stock disponible. Stock máximo: ' + stock, 'error');
+                        return;
+                    }
+                    
+                    productoExistente.cantidad += 1;
+                    mostrarMensaje('✅ ' + nombre + ' agregado al carrito', 'success');
+                } else {
+                    
+                    if (stock <= 0) {
+                        mostrarMensaje('❌ ' + nombre + ' está agotado', 'error');
+                        return;
+                    }
+                    
+                    carrito.push({
+                        id: id,
+                        nombre: nombre,
+                        precio: parseFloat(precio),
+                        descripcion: descripcion,
+                        cantidad: 1,
+                        stockMaximo: stock
+                    });
+                    mostrarMensaje('✅ ' + nombre + ' agregado al carrito', 'success');
+                }
+                
+                localStorage.setItem('carritoPasteleria', JSON.stringify(carrito));
+                console.log("Carrito guardado:", carrito);
+                actualizarContadorCarrito();
+            }
+
+            
+            function mostrarMensaje(mensaje, tipo) {
+                
+                const toast = document.createElement('div');
+                toast.className = `alert alert-${tipo === 'error' ? 'danger' : 'success'} alert-dismissible fade show toast-notification`;
+                toast.innerHTML = `
+                    ${mensaje}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
+                }, 3000);
+            }
+
+            
+            function actualizarContadorCarrito() {
+                const carrito = JSON.parse(localStorage.getItem('carritoPasteleria') || '[]');
+                const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+                
+                const cartBadge = document.querySelector('.cart-badge');
+                if (cartBadge) {
+                    cartBadge.textContent = totalItems;
+                    cartBadge.style.display = totalItems > 0 ? 'inline' : 'none';
+                }
+                
+                console.log("Contador actualizado:", totalItems, "productos");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{general/fragmentos :: head}">
+        <style>
+            .hero-section {
+                background: linear-gradient(135deg, #d48c9d 0%, #b06d7f 100%);
+                color: white;
+                padding: 80px 0;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            
+            .hero-section h1 {
+                font-family: 'Pacifico', cursive;
+            }
+            
+            .cards-section {
+                padding: 60px 0;
+            }
+            
+            
+            .product-card {
+                border: 2px solid #e0e0e0; 
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+                transition: all 0.3s ease;
+                margin-bottom: 30px;
+                background: white;
+                overflow: hidden;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(212, 140, 157, 0.15);
+                border-color: #d48c9d; 
+            }
+            
+            
+            .card-img-container {
+                width: 100%;
+                height: 180px; 
+                overflow: hidden; 
+                border-bottom: 1px solid #e9ecef;
+                background-color: #f8f9fa; 
+            }
+            
+            
+            .card-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; 
+                object-position: center; 
+                transition: transform 0.3s ease;
+            }
+            
+            .product-card:hover .card-img {
+                transform: scale(1.05); 
+            }
+            
+            
+            .card-content {
+                padding: 20px;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            
+            .card-title {
+                font-weight: bold;
+                color: #333;
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            
+            
+            .card-description {
+                color: #666;
+                line-height: 1.4;
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+                text-align: center;
+                flex-grow: 1;
+            }
+            
+            
+            .card-button {
+                display: block;
+                width: 100%;
+                background: #d48c9d;
+                border: none;
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                font-weight: bold;
+                text-align: center;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-size: 0.95rem;
+            }
+            
+            .card-button:hover {
+                background: #b06d7f;
+                color: white;
+                text-decoration: none;
+                transform: translateY(-2px);
+            }
+            
+            
+            .product-card {
+                animation: fadeIn 0.5s ease forwards;
+                opacity: 0;
+            }
+            
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                }
+            }
+            
+            .product-card:nth-child(1) { animation-delay: 0.1s; }
+            .product-card:nth-child(2) { animation-delay: 0.2s; }
+            .product-card:nth-child(3) { animation-delay: 0.3s; }
+            .product-card:nth-child(4) { animation-delay: 0.4s; }
+            
+            
+            @media (max-width: 768px) {
+                .hero-section {
+                    padding: 60px 0;
+                }
+                
+                .hero-section h1 {
+                    font-size: 2.5rem;
+                }
+                
+                .card-img-container {
+                    height: 160px; 
+                }
+                
+                .card-content {
+                    padding: 15px;
+                }
+                
+                .card-title {
+                    font-size: 1.1rem;
+                }
+                
+                .card-description {
+                    font-size: 0.85rem;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .card-img-container {
+                    height: 150px;
+                }
+                
+                .product-card {
+                    margin-bottom: 20px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header th:replace="~{general/fragmentos :: header}"></header>
+
+        <main>
+            
+            <section class="hero-section">
+                <div class="container">
+                    <h1 class="display-4 fw-bold mb-3">Productos</h1>
+                </div>
+            </section>
+
+            
+            <section class="cards-section">
+                <div class="container">
+                    <div class="row">
+                        
+                        
+                        <div class="col-md-6 col-lg-3">
+                            <div class="product-card">
+                                
+                                <div class="card-img-container">
+                                    <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=600&h=400&q=80" 
+                                         class="card-img" 
+                                         alt="Catálogo de productos">
+                                </div>
+                                
+                                
+                                <div class="card-content">
+                                    
+                                    <h5 class="card-title">Ver catálogo</h5>
+                                    
+                                    
+                                    <p class="card-description">
+                                        Un listado con todos nuestros productos disponibles
+                                    </p>
+                                    
+                                    
+                                    <a href="/catalogo" class="card-button">
+                                        Entrar aquí
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-md-6 col-lg-3">
+                            <div class="product-card">
+                                
+                                <div class="card-img-container">
+                                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&h=400&q=80" 
+                                         class="card-img" 
+                                         alt="Personalización de productos">
+                                </div>
+                                
+                                
+                                <div class="card-content">
+                                    
+                                    <h5 class="card-title">Personalización</h5>
+                                    
+                                    
+                                    <p class="card-description">
+                                        Productos personalizados perfectos para toda ocasión
+                                    </p>
+                                    
+                                   
+                                    <a href="/pedidos/personalizado" class="card-button">
+                                        Entrar aquí
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-md-6 col-lg-3">
+                            <div class="product-card">
+                                
+                                <div class="card-img-container">
+                                    <img src="https://plus.unsplash.com/premium_photo-1661546025229-c5e334a69746?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                                         class="card-img" 
+                                         alt="Información de productos">
+                                </div>
+                                
+                               
+                                <div class="card-content">
+                                    
+                                    <h5 class="card-title">Información</h5>
+                                    
+                                    
+                                    <p class="card-description">
+                                        Sabores, tamaños, rellenos y otra información importante
+                                    </p>
+                                    
+                                    
+                                    <a href="/producto/informacion" class="card-button">
+                                        Entrar aquí
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-md-6 col-lg-3">
+                            <div class="product-card">
+                                
+                                <div class="card-img-container">
+                                    <img src="https://plus.unsplash.com/premium_photo-1700593946937-5b2a2eddbcd6?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                                         class="card-img" 
+                                         alt="Ingredientes de productos">
+                                </div>
+                                
+                                
+                                <div class="card-content">
+                                    
+                                    <h5 class="card-title">Ingredientes</h5>
+                                    
+                                    
+                                    <p class="card-description">
+                                        Revisa nuestros ingredientes para verificar que no vayas a tener ningún problema
+                                    </p>
+                                    
+                                    
+                                    <a href="/producto/ingredientes" class="card-button">
+                                        Entrar aquí
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer th:replace="~{general/fragmentos :: footer}"></footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                
+                setTimeout(() => {
+                    const cards = document.querySelectorAll('.product-card');
+                    cards.forEach(card => {
+                        card.style.opacity = '1';
+                    });
+                }, 300);
+                
+                
+                const images = document.querySelectorAll('.card-img');
+                images.forEach(img => {
+                    
+                    img.onload = function() {
+                        this.style.objectFit = 'cover';
+                    };
+                });
+            });
+        </script>
+    </body>
+</html>
