@@ -5,30 +5,16 @@
 
 package com.pasteleria.domain;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@Entity
-@Table(name = "expiracion_token_contraseña") 
 public class ExpiracionTokenContrasena {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_token")
     private Long idToken;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "id_usuario")
     private Usuario usuario;
-
-    private String codigo;          
-    @Column(name = "expira_en")
+    private String codigo;
     private LocalDateTime expiraEn;
-    private Integer usado;          
-
-    @Column(name = "fecha_creacion")
+    private Integer usado;
     private LocalDateTime fechaCreacion;
-    @Column(name = "fecha_modificacion")
     private LocalDateTime fechaModificacion;
-
 }

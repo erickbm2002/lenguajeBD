@@ -4,26 +4,15 @@
  */
 package com.pasteleria.domain;
 
-import jakarta.persistence.*;
-import java.math.BigDecimal;
 import lombok.Data;
+import java.math.BigDecimal;
 
 @Data
-@Entity
-@Table(name = "opcion_pedido")
 public class OpcionPedido {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_opcion")
     private Long idOpcion;
-
-    private String categoria; 
-    private String valor; 
+    private String categoria;
+    private String valor;
     private String descripcion;
-    
-    @Column(precision = 10, scale = 2)
     private BigDecimal precioAdicional;
-
     private Boolean activo;
 }

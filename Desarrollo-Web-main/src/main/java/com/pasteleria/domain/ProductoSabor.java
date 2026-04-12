@@ -5,25 +5,14 @@
 
 package com.pasteleria.domain;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@Entity @Table(name = "producto_sabor")
 public class ProductoSabor {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_sabor")
     private Long idSabor;
-
-    @ManyToOne(optional = false) @JoinColumn(name = "id_producto")
     private Producto producto;
-
     private String etiqueta;
-
-    @Column(name = "fecha_creacion")
     private LocalDateTime fechaCreacion;
-    @Column(name = "fecha_modificacion")
     private LocalDateTime fechaModificacion;
-
 }

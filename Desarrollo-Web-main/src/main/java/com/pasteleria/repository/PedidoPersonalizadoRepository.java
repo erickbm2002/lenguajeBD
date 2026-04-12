@@ -5,10 +5,30 @@
 package com.pasteleria.repository;
 
 import com.pasteleria.domain.PedidoPersonalizado;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public interface PedidoPersonalizadoRepository extends JpaRepository<PedidoPersonalizado, Long> {
-    List<PedidoPersonalizado> findByUsuarioIdUsuario(Long idUsuario);
-    List<PedidoPersonalizado> findByEstado(String estado);
+@Repository
+public class PedidoPersonalizadoRepository {
+
+    private final JdbcTemplate jdbc;
+
+    public PedidoPersonalizadoRepository(JdbcTemplate jdbc) {
+        this.jdbc = jdbc;
+    }
+
+    public PedidoPersonalizado save(PedidoPersonalizado pedido) {
+        return pedido;
+    }
+
+    public List<PedidoPersonalizado> findByUsuarioIdUsuario(Long idUsuario) {
+        return new ArrayList<>();
+    }
+
+    public List<PedidoPersonalizado> findByEstado(String estado) {
+        return new ArrayList<>();
+    }
 }
