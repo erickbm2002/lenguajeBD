@@ -75,147 +75,108 @@ INSERT INTO producto_tamano (id_producto, etiqueta) VALUES (14, 'Individual');
 
 
 -- DATOS SABORES
-INSERT ALL
-INTO producto_sabor (id_producto, etiqueta) VALUES (1, 'Manzana canela')
-INTO producto_sabor (id_producto, etiqueta) VALUES (1, 'Manzana caramelo')
-INTO producto_sabor (id_producto, etiqueta) VALUES (2, 'Limón natural')
-INTO producto_sabor (id_producto, etiqueta) VALUES (2, 'Limón merengue')
-INTO producto_sabor (id_producto, etiqueta) VALUES (3, 'Vainilla')
-INTO producto_sabor (id_producto, etiqueta) VALUES (3, 'Chocolate')
-INTO producto_sabor (id_producto, etiqueta) VALUES (4, 'Frutas tropicales')
-INTO producto_sabor (id_producto, etiqueta) VALUES (4, 'Frutas rojas')
-INTO producto_sabor (id_producto, etiqueta) VALUES (5, 'Surtido')
-INTO producto_sabor (id_producto, etiqueta) VALUES (5, 'Vainilla')
-INTO producto_sabor (id_producto, etiqueta) VALUES (5, 'Chocolate')
-INTO producto_sabor (id_producto, etiqueta) VALUES (6, 'Glaseado')
-INTO producto_sabor (id_producto, etiqueta) VALUES (6, 'Chocolate')
-INTO producto_sabor (id_producto, etiqueta) VALUES (6, 'Azúcar')
-INTO producto_sabor (id_producto, etiqueta) VALUES (7, 'Chocolate')
-INTO producto_sabor (id_producto, etiqueta) VALUES (7, 'Nuez')
-INTO producto_sabor (id_producto, etiqueta) VALUES (7, 'Chips')
-INTO producto_sabor (id_producto, etiqueta) VALUES (8, 'Vainilla')
-INTO producto_sabor (id_producto, etiqueta) VALUES (8, 'Chocolate')
-INTO producto_sabor (id_producto, etiqueta) VALUES (8, 'Limon')
-INTO producto_sabor (id_producto, etiqueta) VALUES (9, 'Vainilla')
-INTO producto_sabor (id_producto, etiqueta) VALUES (9, 'Chocolate')
-INTO producto_sabor (id_producto, etiqueta) VALUES (10, 'Chocolate')
-INTO producto_sabor (id_producto, etiqueta) VALUES (10, 'Vainilla')
-INTO producto_sabor (id_producto, etiqueta) VALUES (11, 'Vainilla')
-INTO producto_sabor (id_producto, etiqueta) VALUES (11, 'Chocolate')
-INTO producto_sabor (id_producto, etiqueta) VALUES (11, 'Red Velvet')
-INTO producto_sabor (id_producto, etiqueta) VALUES (12, 'Vainilla')
-INTO producto_sabor (id_producto, etiqueta) VALUES (12, 'Chocolate')
-INTO producto_sabor (id_producto, etiqueta) VALUES (12, 'Fresa')
-INTO producto_sabor (id_producto, etiqueta) VALUES (13, 'Tres leches')
-INTO producto_sabor (id_producto, etiqueta) VALUES (13, 'Chocolate')
-INTO producto_sabor (id_producto, etiqueta) VALUES (13, 'Vainilla')
-INTO producto_sabor (id_producto, etiqueta) VALUES (14, 'Vainilla')
-INTO producto_sabor (id_producto, etiqueta) VALUES (14, 'Chocolate')
-SELECT * FROM dual;
+-- Sabores para Producto 1
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (1, 'Manzana canela');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (1, 'Manzana caramelo');
+
+-- Sabores para Producto 2
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (2, 'Limón natural');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (2, 'Limón merengue');
+
+-- Sabores para Producto 3
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (3, 'Vainilla');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (3, 'Chocolate');
+
+-- Sabores para Producto 4
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (4, 'Frutas tropicales');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (4, 'Frutas rojas');
+
+-- Sabores para Producto 5
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (5, 'Surtido');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (5, 'Vainilla');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (5, 'Chocolate');
+
+-- Sabores para Producto 6
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (6, 'Glaseado');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (6, 'Chocolate');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (6, 'Azúcar');
+
+-- Sabores para Producto 7
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (7, 'Chocolate');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (7, 'Nuez');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (7, 'Chips');
+
+-- Sabores para Producto 8
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (8, 'Vainilla');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (8, 'Chocolate');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (8, 'Limon');
+
+-- Sabores para Producto 9
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (9, 'Vainilla');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (9, 'Chocolate');
+
+-- Sabores para Producto 10
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (10, 'Chocolate');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (10, 'Vainilla');
+
+-- Sabores para Producto 11
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (11, 'Vainilla');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (11, 'Chocolate');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (11, 'Red Velvet');
+
+-- Sabores para Producto 12
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (12, 'Vainilla');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (12, 'Chocolate');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (12, 'Fresa');
+
+-- Sabores para Producto 13
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (13, 'Tres leches');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (13, 'Chocolate');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (13, 'Vainilla');
+
+-- Sabores para Producto 14
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (14, 'Vainilla');
+INSERT INTO producto_sabor (id_producto, etiqueta) VALUES (14, 'Chocolate');
 
 
 -- DATOS INGREDIENTES COMPLETOS
-INSERT ALL
--- Pies y tortas
-INTO producto_ingrediente (id_producto, nombre) VALUES (1, 'Manzana')
-INTO producto_ingrediente (id_producto, nombre) VALUES (1, 'Canela')
-INTO producto_ingrediente (id_producto, nombre) VALUES (1, 'Harina')
-INTO producto_ingrediente (id_producto, nombre) VALUES (1, 'Mantequilla')
+-- Producto 1: Pie de Manzana
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (1, 'Manzana');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (1, 'Canela');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (1, 'Harina');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (1, 'Mantequilla');
 
-INTO producto_ingrediente (id_producto, nombre) VALUES (2, 'Limón')
-INTO producto_ingrediente (id_producto, nombre) VALUES (2, 'Azúcar')
-INTO producto_ingrediente (id_producto, nombre) VALUES (2, 'Harina')
-INTO producto_ingrediente (id_producto, nombre) VALUES (2, 'Huevo')
+-- Producto 2: Pie de Limón
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (2, 'Limón');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (2, 'Azúcar');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (2, 'Harina');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (2, 'Huevo');
 
-INTO producto_ingrediente (id_producto, nombre) VALUES (3, 'Harina')
-INTO producto_ingrediente (id_producto, nombre) VALUES (3, 'Manjar')
-INTO producto_ingrediente (id_producto, nombre) VALUES (3, 'Merengue')
-INTO producto_ingrediente (id_producto, nombre) VALUES (3, 'Azúcar')
+-- Producto 3: Torta Chilena
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (3, 'Harina');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (3, 'Manjar');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (3, 'Merengue');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (3, 'Azúcar');
 
-INTO producto_ingrediente (id_producto, nombre) VALUES (4, 'Merengue')
-INTO producto_ingrediente (id_producto, nombre) VALUES (4, 'Crema')
-INTO producto_ingrediente (id_producto, nombre) VALUES (4, 'Frutas frescas')
-INTO producto_ingrediente (id_producto, nombre) VALUES (4, 'Azúcar')
+-- Producto 5: Macarons
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (5, 'Almendra molida');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (5, 'Azúcar glass');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (5, 'Clara de huevo');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (5, 'Colorantes naturales');
 
--- Macarons
-INTO producto_ingrediente (id_producto, nombre) VALUES (5, 'Almendra molida')
-INTO producto_ingrediente (id_producto, nombre) VALUES (5, 'Azúcar glass')
-INTO producto_ingrediente (id_producto, nombre) VALUES (5, 'Clara de huevo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (5, 'Colorantes naturales')
-INTO producto_ingrediente (id_producto, nombre) VALUES (5, 'Relleno de mantequilla')
+-- Producto 10: Brookies
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (10, 'Harina de trigo');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (10, 'Chocolate');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (10, 'Mantequilla');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (10, 'Chips de chocolate');
 
--- Donas
-INTO producto_ingrediente (id_producto, nombre) VALUES (6, 'Harina de trigo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (6, 'Levadura')
-INTO producto_ingrediente (id_producto, nombre) VALUES (6, 'Azúcar')
-INTO producto_ingrediente (id_producto, nombre) VALUES (6, 'Huevo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (6, 'Mantequilla')
-INTO producto_ingrediente (id_producto, nombre) VALUES (6, 'Glaseado variado')
+-- Producto 12: Pasteles Personalizados
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (12, 'Harina de trigo');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (12, 'Huevo');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (12, 'Fondant');
+INSERT INTO producto_ingrediente (id_producto, nombre) VALUES (12, 'Colorantes comestibles');
 
--- Brownies
-INTO producto_ingrediente (id_producto, nombre) VALUES (7, 'Chocolate negro')
-INTO producto_ingrediente (id_producto, nombre) VALUES (7, 'Mantequilla')
-INTO producto_ingrediente (id_producto, nombre) VALUES (7, 'Azúcar')
-INTO producto_ingrediente (id_producto, nombre) VALUES (7, 'Huevo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (7, 'Harina')
-INTO producto_ingrediente (id_producto, nombre) VALUES (7, 'Nueces')
 
--- Galletas personalizadas
-INTO producto_ingrediente (id_producto, nombre) VALUES (8, 'Harina de trigo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (8, 'Mantequilla')
-INTO producto_ingrediente (id_producto, nombre) VALUES (8, 'Azúcar')
-INTO producto_ingrediente (id_producto, nombre) VALUES (8, 'Huevo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (8, 'Esencia de vainilla')
-INTO producto_ingrediente (id_producto, nombre) VALUES (8, 'Colorantes comestibles')
-
--- Galletas corazón
-INTO producto_ingrediente (id_producto, nombre) VALUES (9, 'Harina de trigo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (9, 'Mantequilla')
-INTO producto_ingrediente (id_producto, nombre) VALUES (9, 'Azúcar')
-INTO producto_ingrediente (id_producto, nombre) VALUES (9, 'Huevo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (9, 'Esencia de vainilla')
-INTO producto_ingrediente (id_producto, nombre) VALUES (9, 'Decoración en azúcar')
-
--- Brookies
-INTO producto_ingrediente (id_producto, nombre) VALUES (10, 'Harina de trigo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (10, 'Chocolate')
-INTO producto_ingrediente (id_producto, nombre) VALUES (10, 'Mantequilla')
-INTO producto_ingrediente (id_producto, nombre) VALUES (10, 'Azúcar')
-INTO producto_ingrediente (id_producto, nombre) VALUES (10, 'Huevo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (10, 'Chips de chocolate')
-
--- Pasteles clásicos
-INTO producto_ingrediente (id_producto, nombre) VALUES (11, 'Harina de trigo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (11, 'Azúcar')
-INTO producto_ingrediente (id_producto, nombre) VALUES (11, 'Huevo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (11, 'Mantequilla')
-INTO producto_ingrediente (id_producto, nombre) VALUES (11, 'Leche')
-INTO producto_ingrediente (id_producto, nombre) VALUES (11, 'Levadura')
-
--- Pasteles personalizados
-INTO producto_ingrediente (id_producto, nombre) VALUES (12, 'Harina de trigo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (12, 'Azúcar')
-INTO producto_ingrediente (id_producto, nombre) VALUES (12, 'Huevo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (12, 'Mantequilla')
-INTO producto_ingrediente (id_producto, nombre) VALUES (12, 'Fondant')
-INTO producto_ingrediente (id_producto, nombre) VALUES (12, 'Colorantes comestibles')
-
--- Pasteles fríos
-INTO producto_ingrediente (id_producto, nombre) VALUES (13, 'Crema para batir')
-INTO producto_ingrediente (id_producto, nombre) VALUES (13, 'Gelatina')
-INTO producto_ingrediente (id_producto, nombre) VALUES (13, 'Fruta fresca')
-INTO producto_ingrediente (id_producto, nombre) VALUES (13, 'Bizcocho')
-INTO producto_ingrediente (id_producto, nombre) VALUES (13, 'Azúcar')
-INTO producto_ingrediente (id_producto, nombre) VALUES (13, 'Leche condensada')
-
--- Lunch cake
-INTO producto_ingrediente (id_producto, nombre) VALUES (14, 'Harina de trigo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (14, 'Azúcar')
-INTO producto_ingrediente (id_producto, nombre) VALUES (14, 'Huevo')
-INTO producto_ingrediente (id_producto, nombre) VALUES (14, 'Mantequilla')
-INTO producto_ingrediente (id_producto, nombre) VALUES (14, 'Leche')
-INTO producto_ingrediente (id_producto, nombre) VALUES (14, 'Esencia de vainilla')
-SELECT * FROM dual;
 
 -- ACTUALIZAR STOCK
 UPDATE producto SET stock = 10 WHERE id_producto = 1;
@@ -232,111 +193,118 @@ UPDATE producto SET stock = 6 WHERE id_producto = 11;
 UPDATE producto SET stock = 0 WHERE id_producto = 12;
 UPDATE producto SET stock = 10 WHERE id_producto = 13;
 UPDATE producto SET stock = 0 WHERE id_producto = 14;
-COMMIT;
+
 
 -- INSERT OPCIONES PEDIDO 
-INSERT ALL
--- Productos
-INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo)
-VALUES ('producto', 'Pastel', 'Pastel tradicional horneado', 0, 1)
+-- PRODUCTOS
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('producto', 'Pastel', 'Pastel tradicional horneado', 0, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('producto', 'Galleta', 'Galletas personalizadas', 0, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('producto', 'Lunch Cake', 'Lunch Cake especial', 0, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('producto', 'Pastel Frio', 'Pastel refrigerado', 2500, 1);
 
-INTO opcion_pedido VALUES ('producto', 'Galleta', 'Galletas personalizadas', 0, 1)
-INTO opcion_pedido VALUES ('producto', 'Lunch Cake', 'Lunch Cake especial', 0, 1)
-INTO opcion_pedido VALUES ('producto', 'Pastel Frio', 'Pastel refrigerado', 2500, 1)
+-- SABORES BIZCOCHO
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('sabor_bizcocho', 'Vainilla', 'Bizcocho clásico de vainilla', 0, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('sabor_bizcocho', 'Chocolate', 'Bizcocho intenso de chocolate', 1000, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('sabor_bizcocho', 'Red Velvet', 'Bizcocho rojo aterciopelado', 1500, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('sabor_bizcocho', 'Lemon Pound', 'Bizcocho denso de limón', 1200, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('sabor_bizcocho', 'Zanahoria', 'Bizcocho húmedo de zanahoria con nueces', 1500, 1);
 
--- Sabores bizcocho
-INTO opcion_pedido VALUES ('sabor_bizcocho', 'Vainilla', 'Bizcocho clásico de vainilla', 0, 1)
-INTO opcion_pedido VALUES ('sabor_bizcocho', 'Chocolate', 'Bizcocho intenso de chocolate', 1000, 1)
-INTO opcion_pedido VALUES ('sabor_bizcocho', 'Red Velvet', 'Bizcocho rojo aterciopelado', 1500, 1)
-INTO opcion_pedido VALUES ('sabor_bizcocho', 'Lemon Pound', 'Bizcocho denso de limón', 1200, 1)
-INTO opcion_pedido VALUES ('sabor_bizcocho', 'Zanahoria', 'Bizcocho húmedo de zanahoria con nueces', 1500, 1)
+-- SABORES RELLENO
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('sabor_relleno', 'Leche condensada', 'Relleno dulce', 0, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('sabor_relleno', 'Leche condensada cocinada', 'Manjar casero', 1000, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('sabor_relleno', 'Buttercream', 'Crema de mantequilla', 1500, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('sabor_relleno', 'Chocolate', 'Relleno cremoso', 1200, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('sabor_relleno', 'Mermelada Fresa', 'Mermelada natural', 1000, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('sabor_relleno', 'Frutas', 'Frutas frescas', 2000, 1);
 
--- Sabores relleno
-INTO opcion_pedido VALUES ('sabor_relleno', 'Leche condensada', 'Relleno dulce', 0, 1)
-INTO opcion_pedido VALUES ('sabor_relleno', 'Leche condensada cocinada', 'Manjar casero', 1000, 1)
-INTO opcion_pedido VALUES ('sabor_relleno', 'Buttercream', 'Crema de mantequilla', 1500, 1)
-INTO opcion_pedido VALUES ('sabor_relleno', 'Chocolate', 'Relleno cremoso', 1200, 1)
-INTO opcion_pedido VALUES ('sabor_relleno', 'Mermelada Fresa', 'Mermelada natural', 1000, 1)
-INTO opcion_pedido VALUES ('sabor_relleno', 'Frutas', 'Frutas frescas', 2000, 1)
+-- TAMAÑOS
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('tamano', 'Pequeño', '4-6 personas', 7500, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('tamano', 'Mediano', '8-10 personas', 12500, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('tamano', 'Grande', '12-15 personas', 17500, 1);
+INSERT INTO opcion_pedido (categoria, valor, descripcion, precio_adicional, activo) VALUES ('tamano', 'Familiar', '20+ personas', 25000, 1);
 
--- Tamaños
-INTO opcion_pedido VALUES ('tamano', 'Pequeño', '4-6 personas', 7500, 1)
-INTO opcion_pedido VALUES ('tamano', 'Mediano', '8-10 personas', 12500, 1)
-INTO opcion_pedido VALUES ('tamano', 'Grande', '12-15 personas', 17500, 1)
-INTO opcion_pedido VALUES ('tamano', 'Familiar', '20+ personas', 25000, 1)
-SELECT * FROM dual;
 
 INSERT INTO usuario (nombre, correo, password_hash, activo)
-VALUES ('Cliente de Prueba', 'prueba@gmail.com', 'password123', 1);
+VALUES ('Cliente de Prueba', 'prueba@gmail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 1);
 
-SELECT id_usuario, nombre, correo, activo, fecha_creacion
+/* SELECT id_usuario, nombre, correo, activo, fecha_creacion
 FROM usuario
 ORDER BY id_usuario DESC
-FETCH FIRST 5 ROWS ONLY;
+FETCH FIRST 5 ROWS ONLY; */
+
+
 
 -- INSERTAR USUARIOS DE PRUEBA PARA RESEÑAS
-INSERT ALL
-INTO usuario (nombre, correo, password_hash, activo) VALUES ('Adrián González', 'adrian@gmail.com', 'hash123', 1)
-INTO usuario (nombre, correo, password_hash, activo) VALUES ('Vero Losiza', 'vero@gmail.com', 'hash123', 1)
-INTO usuario (nombre, correo, password_hash, activo) VALUES ('Victoria Cruz', 'victoria@gmail.com', 'hash123', 1)
-INTO usuario (nombre, correo, password_hash, activo) VALUES ('Jorge Campos', 'jorge@gmail.com', 'hash123', 1)
-INTO usuario (nombre, correo, password_hash, activo) VALUES ('María Rodríguez', 'maria@gmail.com', 'hash123', 1)
-INTO usuario (nombre, correo, password_hash, activo) VALUES ('Carlos Sánchez', 'carlos@gmail.com', 'hash123', 1)
-INTO usuario (nombre, correo, password_hash, activo) VALUES ('Ana Martínez', 'ana@gmail.com', 'hash123', 1)
-INTO usuario (nombre, correo, password_hash, activo) VALUES ('Luis Fernández', 'luis@gmail.com', 'hash123', 1)
-INTO usuario (nombre, correo, password_hash, activo) VALUES ('Sofía García', 'sofia@gmail.com', 'hash123', 1)
-INTO usuario (nombre, correo, password_hash, activo) VALUES ('David López', 'david@gmail.com', 'hash123', 1)
-SELECT * FROM dual;
+INSERT INTO usuario (nombre, correo, password_hash, activo) 
+VALUES ('Adrián González', 'adrian@gmail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 1);
 
--- INSERT RESEÑAS
-INSERT ALL
+INSERT INTO usuario (nombre, correo, password_hash, activo) 
+VALUES ('Vero Losiza', 'vero@gmail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 1);
 
--- Pie de manzana (ID:1)
-INTO resena (id_producto, id_usuario, calificacion, comentario, aprobada, fecha_creacion)
-VALUES (1, 1, 5, 'Me encantó el pastel, muy original y el sabor muy bueno. La presentación era hermosa y llegó en perfecto estado.', 1, TIMESTAMP '2024-01-15 10:30:00')
+INSERT INTO usuario (nombre, correo, password_hash, activo) 
+VALUES ('Victoria Cruz', 'victoria@gmail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 1);
 
-INTO resena VALUES (1, 2, 4, 'Muy rico, aunque esperaba que fuera un poco más grande. El sabor de manzana con canela es delicioso.', 1, TIMESTAMP '2024-01-20 14:45:00')
+INSERT INTO usuario (nombre, correo, password_hash, activo) 
+VALUES ('Jorge Campos', 'jorge@gmail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 1);
 
-INTO resena VALUES (1, 3, 5, 'Perfecto para el cumpleaños de mi hijo. A todos les encantó y quedaron felices con el sabor.', 1, TIMESTAMP '2024-02-05 16:20:00')
 
--- Pie de limón (ID:2)
-INTO resena VALUES (2, 4, 5, 'El pie de limón estaba espectacular. Justo el punto de acidez que me gusta, ni muy dulce ni muy ácido.', 1, TIMESTAMP '2024-01-25 11:15:00')
 
-INTO resena VALUES (2, 5, 4, 'Muy refrescante, ideal para el clima caliente. La masa estaba crujiente y el relleno cremoso.', 1, TIMESTAMP '2024-02-10 09:30:00')
+-- Insertos para la tabla pedido
+INSERT INTO pedido (id_usuario, total, metodo_pago, estado) 
+VALUES (13, 150.50, 'Tarjeta de Crédito', 'Completado');
 
--- Torta chilena (ID:3)
-INTO resena VALUES (3, 6, 5, 'Auténtica torta chilena como la de mi abuela. Las capas de manjar son perfectas y el bizcocho muy esponjoso.', 1, TIMESTAMP '2024-01-30 13:40:00')
+INSERT INTO pedido (id_usuario, total, metodo_pago, estado) 
+VALUES (12, 85.00, 'PayPal', 'Pendiente');
 
-INTO resena VALUES (3, 7, 4, 'Muy buena, aunque un poco empalagosa para mi gusto. Recomiendo compartirla con varias personas.', 1, TIMESTAMP '2024-02-12 17:25:00')
+INSERT INTO pedido (id_usuario, total, metodo_pago, estado) 
+VALUES (11, 210.99, 'Transferencia', 'En Proceso');
 
--- Macarons (ID:5)
-INTO resena VALUES (5, 2, 5, 'Super cool que se pueda personalizar, a mi amiga le encantaron los macarons. Los colores eran hermosos.', 1, TIMESTAMP '2024-02-01 15:10:00')
+INSERT INTO pedido (id_usuario, total, metodo_pago, estado) 
+VALUES (10, 45.25, 'Efectivo', 'Completado');
 
-INTO resena VALUES (5, 8, 5, 'Los macarons más deliciosos que he probado. Textura perfecta y sabores auténticos. Volveré a pedir.', 1, TIMESTAMP '2024-02-08 12:05:00')
-
-INTO resena VALUES (5, 9, 4, 'Muy bonitos y sabrosos, aunque algunos estaban un poco quebradizos. En general buena experiencia.', 1, TIMESTAMP '2024-02-15 10:50:00')
-
--- Galletas personalizadas (ID:8)
-INTO resena VALUES (8, 3, 4, 'Personalizamos unas galletas y tenían muy buen sabor, pero la masa era algo quebradiza. El diseño quedó precioso igual.', 1, TIMESTAMP '2024-02-03 14:20:00')
-
-INTO resena VALUES (8, 10, 5, 'Las galletas para el baby shower fueron un éxito. El diseño exacto que pedimos y el sabor increíble.', 1, TIMESTAMP '2024-02-18 11:30:00')
-
--- Pasteles personalizados (ID:12)
-INTO resena VALUES (12, 1, 5, 'El pastel de bodas de oro de mis padres quedó espectacular. El diseño era exacto a la foto que enviamos.', 1, TIMESTAMP '2024-01-28 16:45:00')
-
-INTO resena VALUES (12, 5, 5, 'Pastel para graduación perfecto. El sabor de chocolate con buttercream era divino y la decoración impecable.', 1, TIMESTAMP '2024-02-14 13:15:00')
-
--- Pasteles clásicos (ID:11)
-INTO resena VALUES (11, 6, 5, 'El pastel de vainilla clásico nunca falla. Húmedo, esponjoso y con el punto justo de dulce.', 1, TIMESTAMP '2024-02-07 10:25:00')
-
-INTO resena VALUES (11, 7, 4, 'Buen pastel tradicional. Lo único es que me hubiera gustado un poco más de relleno entre las capas.', 1, TIMESTAMP '2024-02-16 15:40:00')
-
--- Brookies (ID:10)
-INTO resena VALUES (10, 8, 5, 'La combinación perfecta entre brownie y cookie. Chocolate intenso y textura increíble. Mis hijos los amaron.', 1, TIMESTAMP '2024-02-09 12:30:00')
-
-INTO resena VALUES (10, 9, 5, 'Brookies adictivos. Pedí dos cajas y se acabaron en un día. Definitivamente los mejores que he probado.', 1, TIMESTAMP '2024-02-17 14:55:00')
-
--- Reseña con comentario de entrega
-INTO resena VALUES (6, 4, 3, 'El producto estaba muy bueno, solo que me costó coordinar la entrega. Tuve que esperar más de lo acordado.', 1, TIMESTAMP '2024-02-11 09:15:00')
+INSERT INTO pedido (id_usuario, total, metodo_pago, estado) 
+VALUES (9, 320.00, 'Tarjeta de Débito', 'Cancelado');
 
 SELECT * FROM dual;
+
+-- INSERT RESEÑAS+
+INSERT INTO resena (id_producto, id_usuario, calificacion, comentario, aprobada, fecha_creacion)
+VALUES (1, 13, 5, 'Me encantó el pastel, muy original y el sabor muy bueno. La presentación era hermosa.', 1, TIMESTAMP '2024-01-15 10:30:00');
+
+-- Reseña de Victoria Cruz (ID: 12)
+INSERT INTO resena (id_producto, id_usuario, calificacion, comentario, aprobada, fecha_creacion)
+VALUES (2, 12, 5, 'El pie de limón estaba espectacular. Justo el punto de acidez que me gusta.', 1, TIMESTAMP '2024-01-25 11:15:00');
+
+-- Reseña de Vero Losiza (ID: 11)
+INSERT INTO resena (id_producto, id_usuario, calificacion, comentario, aprobada, fecha_creacion)
+VALUES (3, 11, 5, 'Auténtica torta chilena como la de mi abuela. Las capas de manjar son perfectas.', 1, TIMESTAMP '2024-01-30 13:40:00');
+
+-- Reseña de Adrián González (ID: 10)
+INSERT INTO resena (id_producto, id_usuario, calificacion, comentario, aprobada, fecha_creacion)
+VALUES (5, 10, 5, 'Los macarons más deliciosos que he probado. Textura perfecta y sabores auténticos.', 1, TIMESTAMP '2024-02-08 12:05:00');
+
+-- Reseña de Cliente de Prueba (ID: 9)
+INSERT INTO resena (id_producto, id_usuario, calificacion, comentario, aprobada, fecha_creacion)
+VALUES (10, 9, 5, 'Brookies adictivos. Pedí dos cajas y se acabaron en un día. Los mejores.', 1, TIMESTAMP '2024-02-17 14:55:00');
+
+-- Token para Adrián González (ID: 10) - Expira en 1 hora
+INSERT INTO expiracion_token_contraseña (id_usuario, codigo, expira_en) 
+VALUES (10, '123456', SYSTIMESTAMP + INTERVAL '1' HOUR);
+
+-- Token para Vero Losiza (ID: 11) - Ya expirado (para pruebas de error)
+INSERT INTO expiracion_token_contraseña (id_usuario, codigo, expira_en) 
+VALUES (11, '987654', SYSTIMESTAMP - INTERVAL '10' MINUTE);
+
+-- Token para Victoria Cruz (ID: 12) - Activo
+INSERT INTO expiracion_token_contraseña (id_usuario, codigo, expira_en) 
+VALUES (12, '456123', SYSTIMESTAMP + INTERVAL '30' MINUTE);
+
+-- Token para Jorge Campos (ID: 13) - Activo
+INSERT INTO expiracion_token_contraseña (id_usuario, codigo, expira_en) 
+VALUES (13, '000999', SYSTIMESTAMP + INTERVAL '1' DAY);
+
+
+
+
+
+
