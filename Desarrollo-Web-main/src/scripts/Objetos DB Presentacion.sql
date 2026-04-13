@@ -1,20 +1,6 @@
 /* PROCEDURE Y SYS_REFCURSOR */
 SET SERVEROUTPUT ON;
 
-SELECT * FROM expiracion_token_contraseña;
-select * from usuario;
-SELECT * FROM PRODUCTO;
-
-SELECT * FROM AUDITORIA_PEDIDO;
-
-DROP PACKAGE PKG_RESENA; 
-DROP SEQUENCE SEQ_AUDITORIA_PEDIDO ;
-
-DROP TRIGGER TRG_AUDITORIA_PEDIDO;
-
-COMMIT;
-
-
 DROP TRIGGER TRG_ACTUALIZAR_STOCK
 
 -- trae los datos del usuario del correo que se envia 
@@ -88,8 +74,8 @@ BEGIN
     IF SQL%ROWCOUNT = 0 THEN
         RAISE_APPLICATION_ERROR(-20001, 'Producto no encontrado: ' || :NEW.id_producto);
     END IF;
-    COMMIT;
 END;
+
 
 
 --Prueba
@@ -301,12 +287,5 @@ VALUES (
 --------------------------------------------------------------------------
 
 /* cursor ?? */
-
-
-
-
-
-
-
 
 

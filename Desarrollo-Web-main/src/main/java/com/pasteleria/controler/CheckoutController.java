@@ -27,60 +27,61 @@ public class CheckoutController {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    @PostMapping("/procesar")
-    @ResponseBody
-    public ResponseEntity<Map<String, Object>> procesarCompra(
-            @RequestBody CompraDto compra,
-            Authentication authentication) {
+        @PostMapping("/procesar")
+        @ResponseBody
+        public ResponseEntity<Map<String, Object>> procesarCompra(
+                @RequestBody CompraDto compra,
+                Authentication authentication) {
 
-        Map<String, Object> response = new HashMap<>();
+            Map<String, Object> response = new HashMap<>();
 
-        try {
-            Long idUsuario = null;
-            if (authentication != null) {
-                String correo = authentication.getName();
-                idUsuario = usuarioRepository.findByCorreo(correo)
-                        .map(Usuario::getIdUsuario)
-                        .orElse(null);
-            }
+            try {
+                Long idUsuario = null;
+                if (authentication != null) {
+                    String correo = authentication.getName();
+                    idUsuario = usuarioRepository.findByCorreo(correo)
+                            .map(Usuario::getIdUsuario)
+                            .orElse(null);
+                }
 
-            if (idUsuario == null) {
-                response.put("success", false);
-                response.put("message", "Usuario no autenticado");
+                if (idUsuario == null) {
+                    response.put("success", false);
+                    response.put("message", "Usuario no autenticado");
+                    return ResponseEntity.badRequest().body(response);
+                }
+
+                Pedido pedido = new Pedido();
+                pedido.setFecha(LocalDateTime.now());
+                pedido.setMetodoPago(compra.getMetodoPago());
+                pedido.setTotal(compra.getTotal());
+                pedido.setEstado("Completado");
+                pedido.setIdUsuario(idUsuario);
+
+                Pedido pedidoGuardado = pedidoRepository.save(pedido);
+
+                for (CompraDto.ItemCarritoDto item : compra.getItems()) {
+                    Producto producto = productoRepository.findById(item.getId()).orElse(null);
+                    if (producto != null) {
+                        DetallePedido detalle = new DetallePedido();
+                        detalle.setPedido(pedidoGuardado);
+                        detalle.setProducto(producto);
+                        detalle.setCantidad(item.getCantidad());
+                        detalle.setPrecioUnitario(item.getPrecio());
+                        detalleRepository.save(detalle);
+                    }
+                }
+
+                response.put("success", true);
+                response.put("idPedido", pedidoGuardado.getIdPedido());
+                return ResponseEntity.ok(response);
+
+            } catch (Exception e) {
+                response.put("causa", e.getCause());
+                response.put("id", authentication.getName());
+                response.put("message", e.getMessage());
                 return ResponseEntity.badRequest().body(response);
             }
-
-            Pedido pedido = new Pedido();
-            pedido.setFecha(LocalDateTime.now());
-            pedido.setMetodoPago(compra.getMetodoPago());
-            pedido.setTotal(compra.getTotal());
-            pedido.setEstado("Completado");
-            pedido.setIdUsuario(idUsuario);
-
-            Pedido pedidoGuardado = pedidoRepository.save(pedido);
-
-            for (CompraDto.ItemCarritoDto item : compra.getItems()) {
-                Producto producto = productoRepository.findById(item.getId()).orElse(null);
-                if (producto != null) {
-                    DetallePedido detalle = new DetallePedido();
-                    detalle.setPedido(pedidoGuardado);
-                    detalle.setProducto(producto);
-                    detalle.setCantidad(item.getCantidad());
-                    detalle.setPrecioUnitario(item.getPrecio());
-                    detalleRepository.save(detalle);
-                }
-            }
-
-            response.put("success", true);
-            response.put("idPedido", pedidoGuardado.getIdPedido());
-            return ResponseEntity.ok(response);
-
-        } catch (Exception e) {
-            response.put("success", false);
-            response.put("message", e.getMessage());
-            return ResponseEntity.badRequest().body(response);
         }
-    }
 
     @GetMapping("/confirmacion/{id}")
     public String confirmacion(@PathVariable Long id, Model model) {

@@ -1,0 +1,6 @@
+SELECT * FROM expiracion_token_contraseña;
+select * from usuario;
+SELECT * FROM PRODUCTO;
+
+SELECT * FROM AUDITORIA_PEDIDO
+ORDER BY FECHA_REGISTRO DESC;
