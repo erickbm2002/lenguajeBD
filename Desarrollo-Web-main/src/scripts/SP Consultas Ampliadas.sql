@@ -589,3 +589,38 @@ EXEC SP_RESENA_BY_USUARIO_B(1,1);
 COMMIT;
 
 
+CREATE OR REPLACE PROCEDURE SP_INSERTAR_PEDIDO_PERSONALIZADO(
+    VPRODUCTO        IN VARCHAR2,
+    VSABOR_BIZCOCHO  IN VARCHAR2,
+    VSABOR_RELLENO   IN VARCHAR2,
+    VTAMANO          IN VARCHAR2,
+    VPERSONALIZACION IN CLOB,
+    VPRECIO          IN NUMBER,
+    VESTADO          IN VARCHAR2,
+    VFECHA_ENTREGA   IN TIMESTAMP,
+    VID_USUARIO      IN NUMBER,
+    VNOMBRE_CLIENTE  IN VARCHAR2,
+    VTELEFONO        IN VARCHAR2,
+    VEMAIL           IN VARCHAR2,
+    VID_PEDIDO       OUT NUMBER
+)
+AS
+BEGIN
+    INSERT INTO pedido_personalizado (
+        producto, sabor_bizcocho, sabor_relleno, tamano,
+        personalizacion, precio, estado, fecha_creacion,
+        fecha_entrega, id_usuario, nombre_cliente, telefono, email
+    )
+    VALUES (
+        VPRODUCTO, VSABOR_BIZCOCHO, VSABOR_RELLENO, VTAMANO,
+        VPERSONALIZACION, VPRECIO, VESTADO, SYSTIMESTAMP,
+        VFECHA_ENTREGA, VID_USUARIO, VNOMBRE_CLIENTE, VTELEFONO, VEMAIL
+    )
+    RETURNING id_pedido INTO VID_PEDIDO;
+    COMMIT;
+EXCEPTION
+    WHEN OTHERS THEN
+        ROLLBACK;
+        RAISE;
+END;
+
