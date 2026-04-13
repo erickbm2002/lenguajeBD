@@ -71,29 +71,29 @@ public class ResenaController {
             BindingResult result,
             Model model,
             RedirectAttributes redirectAttributes) {
-        
+
         if (result.hasErrors()) {
             Producto producto = productoService.ver(form.getIdProducto());
             model.addAttribute("producto", producto);
             return "reseñas/crear";
         }
-        
+
         try {
-            
             Long idUsuario = 1L;
-            
+
             resenaService.crearResena(form, idUsuario);
-            
-            redirectAttributes.addFlashAttribute("mensajeExito", 
-                "¡Gracias por tu reseña! Ha sido publicada exitosamente.");
-            
+
+            redirectAttributes.addFlashAttribute("mensajeExito",
+                    "¡Gracias por tu reseña! Ha sido publicada exitosamente.");
+
+            return "redirect:/producto/" + form.getIdProducto();
+
         } catch (RuntimeException e) {
+
             redirectAttributes.addFlashAttribute("error", e.getMessage());
-            // Redirigir al formulario con el producto seleccionado
+
             return "redirect:/reseñas/crear?idProducto=" + form.getIdProducto();
         }
-        
-        return "redirect:/producto/" + form.getIdProducto();
     }
     
     
